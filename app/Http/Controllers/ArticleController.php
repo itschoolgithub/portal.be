@@ -8,6 +8,14 @@ use App\Models\Article;
 class ArticleController extends Controller
 {
     public function index() {
-        return Article::all();
+        return Article::select([
+            'id',
+            'title',
+            'image'
+        ])->get();
+    }
+
+    public function show(Article $article) {
+        return $article;
     }
 }
