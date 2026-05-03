@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 255)->default('Новая статья');
+            $table->string('title', 254)->default('Новая статья');
             $table->text('content');
             $table->string('image', 255)->nullable();
             $table->timestamps();
