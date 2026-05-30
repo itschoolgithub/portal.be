@@ -14,4 +14,6 @@ Route::get("/articles/{article}", [ArticleController::class, "show"]);
 
 Route::get("/admin/articles", [AdminArticleController::class, "index"])->middleware('auth:sanctum');
 Route::post("/admin/articles", [AdminArticleController::class, "store"])->middleware('auth:sanctum');
+Route::get("/admin/articles/{article}", [AdminArticleController::class, "show"])->middleware('auth:sanctum');
+Route::put("/admin/articles/{article}", [AdminArticleController::class, "update"])->middleware('auth:sanctum');
 Route::delete("/admin/articles/{article}", [AdminArticleController::class, "delete"])->middleware('auth:sanctum');

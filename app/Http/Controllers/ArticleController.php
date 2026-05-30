@@ -16,9 +16,9 @@ class ArticleController extends Controller
     }
 
     public function show(Article $article) {
-        if ( auth('sanctum')->user() ) {
-            $article->title = 'Вы просматриваете страницу как авторизованный пользователь ' . $article->title;
-        }
+        // if ( auth('sanctum')->user() ) {
+        //     $article->title = 'Вы просматриваете страницу как авторизованный пользователь ' . $article->title;
+        // }
         return $article;
     }
 }

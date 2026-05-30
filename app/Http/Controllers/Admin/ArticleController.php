@@ -17,8 +17,23 @@ class ArticleController extends Controller
         ])->get();
     }
 
+    public function show(Article $article) {
+        return $article;
+    }
+
     public function store(StoreArticle $request) {
         Article::create([
+            'title' => $request->input('title'),
+            'content' => $request->input('content'),
+            'image' => $request->input('image')
+        ]);
+        return [
+            'success' => true
+        ];
+    }
+
+    public function update(StoreArticle $request, Article $article) {
+        $article->update([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
             'image' => $request->input('image')
